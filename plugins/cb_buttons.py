@@ -35,18 +35,21 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
+from pydrive.drive import GoogleDrive
 
 
 @pyrogram.Client.on_callback_query()
 async def button(bot, update):
-    if update.from_user.id in Config.BANNED_USERS:
-        await bot.delete_messages(
+    # logger.info(update)
+    if str(update.from_user.id) in Config.BANNED_USERS:
+        await bot.edit_message_text(
             chat_id=update.message.chat.id,
-            message_ids=update.message.message_id,
-            revoke=True
+            text=Translation.ABUSIVE_USERS,
+            message_id=update.message.message_id,
+            disable_web_page_preview=True,
+            parse_mode="html"
         )
         return
-    # logger.info(update)
     cb_data = update.data
     if ":" in cb_data:
         # unzip formats
@@ -86,7 +89,8 @@ async def button(bot, update):
                     progress=progress_for_pyrogram,
                     progress_args=(
                         Translation.UPLOAD_START,
-                        update.message,
+                        update.message.message_id,
+                        update.message.chat.id,
                         start_time
                     )
                 )
@@ -115,7 +119,8 @@ async def button(bot, update):
                 progress=progress_for_pyrogram,
                 progress_args=(
                     Translation.UPLOAD_START,
-                    update.message,
+                    update.message.message_id,
+                    update.message.chat.id,
                     start_time
                 )
             )
