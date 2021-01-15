@@ -1,22 +1,14 @@
 {
-  "name": "TG URL Uploader ",
-  "description": "Telegram's best Open Source ALL-In-One Multi Purpose RoBot. Create your Fork now.",
+  "name": "AnyDLBot",
+  "description": "Telegram's best YouTube Downloader. Create your Fork now.",
   "keywords": [
     "telegram",
     "best",
     "youtube",
     "downloader",
-    "open",
-    "source",
-    "multi",
-    "purpose",
-    "ffmpeg",
-    "remote",
-    "uploader"
+    "3"
   ],
-  "success_url": "https://telegram.dog/AnyDLBot",
-  "website": "https://github.com/TGExplore/TG_URL_Uploader",
-  "repository": "https://github.com/TGExplore/TG_URL_Uploader",
+  "repository": "https://github.com/SpEcHiDe/AnyDLBot",
   "env": {
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode",
@@ -25,6 +17,14 @@
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string.",
       "value": ""
+    },
+    "HTTP_DOMAIN": {
+      "description": "The Heroku App URL similar to https://<appname>.herokuapp.com/",
+      "value": "https://example.com/"
+    },
+    "PORT": {
+      "description": "Port to use for your webhooks",
+      "value": "5000"
     },
     "CHAT_BASE_TOKEN": {
       "description": "Your chat base token, as a string.",
@@ -40,7 +40,7 @@
     },
     "AUTH_USERS": {
       "description": "allow only pre-defined users to use this bot",
-      "value": "683538773"
+      "value": "7351948 20516707 23122162 500346573"
     },
     "DEF_THUMB_NAIL_VID_S": {
       "description": "default thumbnail to be used in the videos. Incase, youtube-dl is unable to find a thumbnail.",
@@ -65,10 +65,5 @@
   }, {
     "url": "heroku/python"
   }],
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "free"
-    }
-  }
+  
 }
