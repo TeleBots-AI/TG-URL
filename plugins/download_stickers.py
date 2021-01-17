@@ -39,7 +39,7 @@ async def DownloadStickersBot(bot, update):
             parse_mode="html"
         )
         return
-    if str(update.from_user.id) not in Config.UTUBE_BOT_USERS:
+    if str(update.from_user.id) not in Config.AUTH_USERS:
         # restrict free users from sending more links
         if str(update.from_user.id) in Config.ADL_BOT_RQ:
             current_time = time.time()
