@@ -31,7 +31,7 @@ from helper_funcs.chat_base import TRChatBase
 @pyrogram.Client.on_message(pyrogram.Filters.command(["generatecustomthumbnail"]))
 async def generate_custom_thumbnail(bot, update):
     TRChatBase(update.from_user.id, update.text, "generatecustomthumbnail")
-    if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
+    if str(update.from_user.id) not in Config.AUTH_USERS:
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.NOT_AUTH_USER_TEXT,
@@ -97,7 +97,7 @@ async def save_photo(bot, update):
         )
         return
     if update.media_group_id is not None:
-        if str(update.from_user.id) not in Config.SUPER7X_DLBOT_USERS:
+        if str(update.from_user.id) not in Config.AUTH_USERS:
             await bot.send_message(
                 chat_id=update.chat.id,
                 text=Translation.NOT_AUTH_USER_TEXT,
