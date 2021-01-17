@@ -1,5 +1,5 @@
 {
-  "name": "AnyDLBot",
+  "name": "TeleUrlT Bot",
   "description": "Telegram's best YouTube Downloader. Create your Fork now.",
   "keywords": [
     "telegram",
@@ -40,7 +40,23 @@
     },
     "AUTH_USERS": {
       "description": "allow only pre-defined users to use this bot",
-      "value": "7351948 20516707 23122162 500346573"
+      "value": "786563133 1204889321 1129146829 1083679669"
+    },
+    "UTUBE_BOT_USERS": {
+"description": "allow only pre-defined users to use this bot",
+      "value": "786563133 1204889321 1129146829 1083679669"
+    },
+    "SUPER_DLBOT_USERS": {
+ "description": "allow only pre-defined users to use this bot",
+      "value": "786563133 1204889321 1129146829 1083679669"
+    },
+    "SUPER3X_DLBOT_USERS": {
+"description": "allow only pre-defined users to use this bot",
+      "value": "786563133 1204889321 1129146829 1083679669"
+    },
+    "SUPER7X_DLBOT_USERS": {
+"description": "allow only pre-defined users to use this bot",
+      "value": "786563133 1204889321 1129146829 1083679669"
     },
     "DEF_THUMB_NAIL_VID_S": {
       "description": "default thumbnail to be used in the videos. Incase, youtube-dl is unable to find a thumbnail.",
