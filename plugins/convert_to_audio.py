@@ -35,7 +35,7 @@ from PIL import Image
 @pyrogram.Client.on_message(pyrogram.Filters.command(["converttoaudio"]))
 async def convert_to_audio(bot, update):
     TRChatBase(update.from_user.id, update.text, "converttoaudio")
-    if str(update.from_user.id) not in Config.SUPER_DLBOT_USERS:
+    if str(update.from_user.id) not in Config.AUTH_USERS:
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.NOT_AUTH_USER_TEXT,
